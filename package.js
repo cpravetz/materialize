@@ -5,8 +5,8 @@ Package.describe({
   git: 'https://github.com/cpravetz/materialize.git',
 });
 
-Package.on_use(function(api, where) {
-  api.versionsFrom('METEOR@1.0');
+Package.onUse(function(api, where) {
+  api.versionsFrom(['1.8','2.3']);
 
   api.use([
     'templating',
@@ -25,7 +25,7 @@ Package.on_use(function(api, where) {
     'seakaytee:ua-core@1.15.0',
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'lib/at_error.html',
     'lib/at_error.js',
     'lib/at_form.html',
@@ -67,8 +67,8 @@ Package.on_use(function(api, where) {
   ], ['client']);
 });
 
-Package.on_test(function(api) {
-  api.versionsFrom('METEOR@1.4.0.1');
+Package.onTest(function(api) {
+  api.versionsFrom(['1.4.0.1','2.3']);
 
   api.use([
     'seakaytee:ua-materialize',
@@ -82,7 +82,7 @@ Package.on_test(function(api) {
     'templating'
   ], ['client', 'server']);
 
-  api.add_files([
+  api.addFiles([
     'tests/tests.js'
   ], ['client', 'server']);
 });
